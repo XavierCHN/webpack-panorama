@@ -1,15 +1,15 @@
 {
-  "name": "@demon673/webpack-panorama",
-  "version": "0.2.7",
+  "name": "webpack-panorama-x",
+  "version": "0.3.0",
   "description": "Utilities for using webpack with Valve's Panorama UI (for Dota 2 Custom Games).",
   "keywords": [
     "dota",
     "panorama",
     "webpack"
   ],
-  "repository": "https://github.com/Demon673/webpack-panorama",
+  "repository": "https://github.com/XavierCHN/webpack-panorama",
   "license": "MIT",
-  "author": "Demon673",
+  "author": "XavierCHN",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
