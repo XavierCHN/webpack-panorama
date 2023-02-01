@@ -85,7 +85,8 @@ export class PanoramaManifestPlugin {
 
         try {
           if (/\.ya?ml$/.test(this.entries)) {
-            entries = ((yaml.load(rawManifest, { schema: FAILSAFE_SCHEMA })) ?? []) as ManifestEntry[];
+            entries = (yaml.load(rawManifest, { schema: FAILSAFE_SCHEMA }) ??
+              []) as ManifestEntry[];
           } else if (this.entries.endsWith('.json')) {
             entries = JSON.parse(rawManifest);
           } else {
@@ -160,19 +161,7 @@ export class PanoramaManifestPlugin {
         }
 
         xmlAssets.sort((a, b) => {
-          if (a.type > b.type) {
-            return 1;
-          }
-          if (a.type < b.type) {
-            return -1;
-          }
-          if (a.file > b.file) {
-            return 1;
-          }
-          if (a.file < b.file) {
-            return -1;
-          }
-          return 0;
+          return a.type === b.type ? a.file.localeCompare(b.file) : a.type.localeCompare(b.type);
         });
 
         (args.assets as any).xml = xmlAssets;
